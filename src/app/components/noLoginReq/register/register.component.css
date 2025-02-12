@@ -1,0 +1,9 @@
+.register-btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.register-btn-group button {
+  margin: 0 10px;
+}
