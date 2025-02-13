@@ -29,7 +29,7 @@ export class AuthService {
 
   logout(): void {
     this.isLoggedIn = false;
-    this.router.navigate(['/login']);
+    this.router.navigate(['/homepage']);
   }
 
   isAuthenticated(): boolean {

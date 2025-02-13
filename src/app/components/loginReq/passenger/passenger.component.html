@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2>Passenger Table</h2>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Passenger ID</th>
+            <th>Passenger Name</th>
+            <th>Passenger Email</th>
+            <th>Passenger Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="passengerList.length === 0">
+            <td colspan="2">No passengers found.</td>
+          </tr>
+          <tr *ngFor="let passenger of passengerList">
+            <td>{{ passenger.passengerID }}</td>
+            <td>{{ passenger.firstName }} {{ passenger.lastName }}</td>
+            <td>{{ passenger.email }}</td>
+            <td>{{ passenger.phone }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,152 @@
+<div class="nav-menu">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDarkDropdownMenuLink"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Station
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-dark"
+        aria-labelledby="navbarDarkDropdownMenuLink"
+      >
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/stations"
+            routerLinkActive="active"
+            >View Stations</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/station/add"
+            routerLinkActive="active"
+            *ngIf="authService.isAuthenticated()"
+            >Add Station</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/station/update"
+            routerLinkActive="active"
+            *ngIf="authService.isAuthenticated()"
+            >Update Station</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDarkDropdownMenuLink"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Trains
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-dark"
+        aria-labelledby="navbarDarkDropdownMenuLink"
+      >
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/trains"
+            routerLinkActive="active"
+            >View Trains</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/trains/add"
+            routerLinkActive="active"
+            *ngIf="authService.isAuthenticated()"
+            >Add Trains</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/trains/update"
+            routerLinkActive="active"
+            *ngIf="authService.isAuthenticated()"
+            >Update Trains</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDarkDropdownMenuLink"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Passengers
+      </a>
+      <ul
+        class="dropdown-menu dropdown-menu-dark"
+        aria-labelledby="navbarDarkDropdownMenuLink"
+      >
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/passengers"
+            routerLinkActive="active"
+            >Passengers</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/passengers/add"
+            routerLinkActive="active"
+            *ngIf="authService.isAuthenticated()"
+            >Add Passenger</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/passengers/update"
+            routerLinkActive="active"
+            *ngIf="authService.isAuthenticated()"
+            >Update Passenger</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="authService.isAuthenticated() ? null : '/login'"
+        (click)="authService.isAuthenticated() ? logout() : null"
+        routerLinkActive="active"
+      >
+        {{ authService.isAuthenticated() ? "Logout" : "Login" }}
+      </a>
+    </li>
+
+    <li *ngIf="!authService.isAuthenticated()" class="nav-item">
+      <a class="nav-link" routerLink="/register" routerLinkActive="active"
+        >Register</a
+      >
+    </li>
+  </ul>
+</div>
